@@ -55,3 +55,9 @@ body {
 #toggle-favorite-btn {
   display: none;
 }
+
+.star-icon {
+  font-size: 25px;
+  color: yellow;
+  cursor: pointer;
+}
