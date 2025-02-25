@@ -1,4 +1,4 @@
-import { currentQuote } from './quote.js';
+import { currentQuote } from '../../index.js';
 
 function toggleFavoriteIcon(isFavorite, el) {
   el.classList.toggle('fa', isFavorite);
