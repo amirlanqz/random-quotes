@@ -15,13 +15,13 @@ function hideFavoriteBtn(btn) {
 
 function toggleFavorite(quote, btn, container) {
   quote.isFavorite = !quote.isFavorite;
-  const { id, text, author, isFavorite } = quote;
+  const { text, author, isFavorite } = quote;
   toggleFavoriteBtnIcon(isFavorite, btn);
 
   if (isFavorite) {
     showFavoriteCard(text, author, container);
   } else {
-    hideFavoriteCard(id);
+    hideFavoriteCard(text);
   }
 }
 
