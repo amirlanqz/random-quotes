@@ -15,30 +15,30 @@ function hideFavoriteBtn(btn) {
 
 function toggleFavorite(quote, btn, container) {
   quote.isFavorite = !quote.isFavorite;
-  const { text, author, isFavorite } = quote;
+  const { id, isFavorite } = quote;
   toggleFavoriteBtnIcon(isFavorite, btn);
 
   if (isFavorite) {
-    showFavoriteCard(text, author, container);
+    showFavoriteCard(quote, container);
   } else {
-    hideFavoriteCard(text);
+    hideFavoriteCard(id);
   }
 }
 
-function hideFavoriteCard(currentQuote) {
-  const favoriteCards = document.querySelectorAll('.favorite-card');
-  favoriteCards.forEach((card) => {
-    if (card.textContent.includes(currentQuote)) {
-      card.remove();
-    }
-  });
+function hideFavoriteCard(id) {
+  const card = document.querySelector(`.favorite-card[data-quote-id="${id}"]`);
+  if (card) {
+    card.remove();
+  }
 }
 
-function showFavoriteCard(quote, author, container) {
+function showFavoriteCard(quote, container) {
+  const { id, text, author } = quote;
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
+  favoriteCard.dataset.quoteId = id;
   favoriteCard.innerHTML = `
-    <p>${quote}</p>
+    <p>${text}</p>
     <p class="author">${author}</p>
     `;
   container.appendChild(favoriteCard);
