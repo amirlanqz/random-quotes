@@ -12,10 +12,10 @@ generateBtn.addEventListener('click', () =>
 );
 
 const favoritesContainer = document.getElementById('favorites-container');
-const favoriteBtn = document.getElementById('favorite-btn');
-favoriteBtn.addEventListener('click', () =>
-  toggleFavorite(currentQuote, favoriteBtn, favoritesContainer)
+const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
+quoteFavoriteBtn.addEventListener('click', () =>
+  toggleFavorite(currentQuote, quoteFavoriteBtn, favoritesContainer)
 );
-hideFavoriteBtn(favoriteBtn);
+hideFavoriteBtn();
 
-export { favoriteBtn };
+export { quoteFavoriteBtn };
