@@ -13,8 +13,9 @@ function hideFavoriteBtn() {
   quoteFavoriteBtn.style.display = 'none';
 }
 
-function toggleFavorite(quote, btn, container) {
+function toggleFavorite(quote, btn, container, setCurrentQuote) {
   quote.isFavorite = !quote.isFavorite;
+  setCurrentQuote(quote);
   const { id, isFavorite } = quote;
   toggleFavoriteBtnIcon(isFavorite);
 
